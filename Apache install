@@ -1,0 +1,12 @@
+1、download:http://apache.org/dist/httpd/
+2、解压文件： tar -zxvf http-*tar.gz
+3、建立安装目录：mkdir /usr/local/web/apache/
+4、cd http-* 
+5、./configure --prefix=/usr/local/web/apache --enable-shared=max --enable-module=rewrite --enable=so
+6、make && make install
+7、cd **apache/bin
+8、添加PATH：（1）vim /etc/profile  添加PARH=$PATH:/usr/local/apacahe/bin  source **/profile配置生效;(2)针对用户，vim ~/.bash_profile  同上修改后
+source **/.bash_profile 配置生效
+9、修改配置文件：**conf/httpd.conf  -----"isten 80"\"ServerName"     适当修改
+10、关闭防火墙  或添加规则允许其监听的端口通过。
+11、启动：apachectl start/restart/stop........  添加开机启动   /etc/rc.d/rc.local  
