@@ -34,6 +34,7 @@ configtest)
 esac
 chmod +x /etc/init.d/tomact; sh /etc/init.d/tomact
 chkconfig --add tomact
-catalina.sh start                           //#显示Bootstrap启动则表示启动成功
+catalina.sh start                          
+jps            //#显示Bootstrap启动则表示启动成功
 29145 Bootstrap                           
 29163 Jps
