@@ -22,15 +22,15 @@ CATALINA_HOME=/usr/local/tomcat
 export JAVA_HOME CATALINA_HOME######      /设置了java的环境变量可省去
 case $1 in 
 start)
-  exec $ $CATALINA_HOME/bin/catalina.sh start;;
+  exec $CATALINA_HOME/bin/catalina.sh start;;
 stop)
-  exec $ $CATALINA_HOME/bin/catalina.sh stop;;
+  exec $CATALINA_HOME/bin/catalina.sh stop;;
 restart)
-  exec $ $CATALINA_HOME/bin/catalina.sh restart;;
+  exec $CATALINA_HOME/bin/catalina.sh restart;;
 configtest)
-  exec $ $CATALINA_HOME/bin/catalina.sh configtest;;
+  exec $CATALINA_HOME/bin/catalina.sh configtest;;
 *)
-  exec $ $CATALINA_HOME/bin/catalina.sh *;;
+  exec $CATALINA_HOME/bin/catalina.sh *;;
 esac
 chmod +x /etc/init.d/tomact; sh /etc/init.d/tomact
 chkconfig --add tomact
