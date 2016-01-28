@@ -1,1 +1,39 @@
-网址：http://tomcat.apache.org/
+网址：http://tomcat.apache.org/     需要先安装jdk
+一、安装jdk、配置环境变量
+chmod + jdk-*.bin
+./jdk-*.bin
+vim /etc/profile/java.sh         //设置java环境变量
+export JAVA_HOME=/usr/java/latest      //jdk的安装路径
+export PATH=$PAEH:$JAVA_HOME/bin
+chmod +x java.sh; ./java.sh
+java                                  //验证
+tar -zxvf apache-tomcat* -C /usr/local/
+ln -s /usr/local/apache-tomact* /usr/local/tomact
+vim /etc/profile/tomact.sh
+export CATALINA_HOME=/usr/local/tomact
+export PATH=$PAEH:$CATALINA_HOME/bin
+chmod + tomact.sh; ./etc/profile/tomecat.sh
+catalina.sh version    //验证
+vim /etc/init.d/tomact
+#!/bin/bash
+#Tomact init script for Centos
+####JAVA_HOME=/usr/java/latest
+CATALINA_HOME=/usr/local/tomcat
+export JAVA_HOME CATALINA_HOME######      /设置了java的环境变量可省去
+case $1 in 
+start)
+  exec $ $CATALINA_HOME/bin/catalina.sh start;;
+stop)
+  exec $ $CATALINA_HOME/bin/catalina.sh stop;;
+restart)
+  exec $ $CATALINA_HOME/bin/catalina.sh restart;;
+configtest)
+  exec $ $CATALINA_HOME/bin/catalina.sh configtest;;
+*)
+  exec $ $CATALINA_HOME/bin/catalina.sh *;;
+esac
+chmod +x /etc/init.d/tomact; sh /etc/init.d/tomact
+chkconfig --add tomact
+catalina.sh start                           //#显示Bootstrap启动则表示启动成功
+29145 Bootstrap                           
+29163 Jps
